@@ -1,7 +1,11 @@
 package com.hgw.mvpdemo.presenter;
 
 import android.os.Handler;
-import com.hgw.mvpdemo.base.BasePresenter;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+
+import com.hgw.mvpdemo.base.mvp.BasePresenter;
 import com.hgw.mvpdemo.contract.SplashContract;
 
 
@@ -12,17 +16,23 @@ import com.hgw.mvpdemo.contract.SplashContract;
 
 public class SplashPresenter extends BasePresenter<SplashContract.View> implements SplashContract.Presenter {
 
-    /**
-     * 执行延时2秒，然后跳转页面
-     * */
     @Override
-    public void delayToMain() {
-        new Handler().postDelayed(new Runnable() {
+    public void startAnimation(View view) {
+        // 渐变展示启动屏
+        AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
+        aa.setDuration(2000);
+        view.startAnimation(aa);
+        aa.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void run() {
-                //回调到View层，执行页面跳转
+            public void onAnimationEnd(Animation arg0) {
                 mView.jumpToMain();
             }
-        }, 2000);
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+        });
     }
 }

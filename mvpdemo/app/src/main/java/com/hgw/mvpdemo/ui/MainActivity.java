@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.hgw.mvpdemo.R;
-import com.hgw.mvpdemo.base.BaseActivity;
+import com.hgw.mvpdemo.base.ui.BaseActivity;
 import com.hgw.mvpdemo.contract.MainContract;
 import com.hgw.mvpdemo.presenter.MainPresenter;
 

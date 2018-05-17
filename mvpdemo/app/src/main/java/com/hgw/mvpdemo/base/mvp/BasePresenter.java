@@ -1,4 +1,4 @@
-package com.hgw.mvpdemo.base;
+package com.hgw.mvpdemo.base.mvp;
 
 /**
  * 描述：Presenter 基类（定义一些Presenter层共用的接口方法）
