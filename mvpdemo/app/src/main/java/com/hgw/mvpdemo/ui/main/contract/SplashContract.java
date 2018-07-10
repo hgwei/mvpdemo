@@ -1,4 +1,4 @@
-package com.hgw.mvpdemo.contract;
+package com.hgw.mvpdemo.ui.main.contract;
 
 import com.hgw.mvpdemo.base.mvp.BaseView;
 import com.hgw.mvpdemo.base.mvp.AbstractPresenter;
@@ -14,9 +14,9 @@ public interface SplashContract {
     interface View extends BaseView {
 
         /**
-         * 回调View，跳转MainActivity
+         * 回调View，跳转首页
          * */
-        void jumpToMain();
+        void toMain();
     }
 
 
@@ -24,9 +24,9 @@ public interface SplashContract {
     interface Presenter extends AbstractPresenter<View> {
 
         /**
-         * 启动动画
+         * 业务判断
          * */
-        void startAnimation(android.view.View view);
+        void start(android.view.View view);
 
     }
 

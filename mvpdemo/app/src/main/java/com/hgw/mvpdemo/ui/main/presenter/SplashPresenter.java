@@ -1,12 +1,12 @@
-package com.hgw.mvpdemo.presenter;
+package com.hgw.mvpdemo.ui.main.presenter;
 
-import android.os.Handler;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
+import com.hgw.mvpdemo.app.MvpDemoApp;
 import com.hgw.mvpdemo.base.mvp.BasePresenter;
-import com.hgw.mvpdemo.contract.SplashContract;
+import com.hgw.mvpdemo.ui.main.contract.SplashContract;
 
 
 /**
@@ -17,6 +17,16 @@ import com.hgw.mvpdemo.contract.SplashContract;
 public class SplashPresenter extends BasePresenter<SplashContract.View> implements SplashContract.Presenter {
 
     @Override
+    public void start(View view) {
+        //首次打开，才出现启动页
+        if(MvpDemoApp.isFirstRun){
+            MvpDemoApp.isFirstRun = false;
+            startAnimation(view);
+        }else{
+            mView.toMain();
+        }
+    }
+
     public void startAnimation(View view) {
         // 渐变展示启动屏
         AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
@@ -25,7 +35,7 @@ public class SplashPresenter extends BasePresenter<SplashContract.View> implemen
         aa.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationEnd(Animation arg0) {
-                mView.jumpToMain();
+                mView.toMain();
             }
             @Override
             public void onAnimationRepeat(Animation animation) {

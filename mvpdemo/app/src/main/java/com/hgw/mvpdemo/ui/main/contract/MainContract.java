@@ -1,4 +1,4 @@
-package com.hgw.mvpdemo.contract;
+package com.hgw.mvpdemo.ui.main.contract;
 
 import com.hgw.mvpdemo.base.mvp.AbstractPresenter;
 import com.hgw.mvpdemo.base.mvp.BaseView;

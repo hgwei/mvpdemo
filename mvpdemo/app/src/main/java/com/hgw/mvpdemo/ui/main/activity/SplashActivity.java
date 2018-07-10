@@ -1,13 +1,12 @@
-package com.hgw.mvpdemo.ui;
+package com.hgw.mvpdemo.ui.main.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import com.hgw.mvpdemo.R;
-import com.hgw.mvpdemo.app.MvpDemoApp;
 import com.hgw.mvpdemo.base.ui.BaseActivity;
-import com.hgw.mvpdemo.contract.SplashContract;
-import com.hgw.mvpdemo.presenter.SplashPresenter;
+import com.hgw.mvpdemo.ui.main.contract.SplashContract;
+import com.hgw.mvpdemo.ui.main.presenter.SplashPresenter;
 
 /**
  * 描述：启动页
@@ -32,18 +31,11 @@ public class SplashActivity extends BaseActivity<SplashPresenter> implements Spl
         final View view = View.inflate(this, R.layout.activity_splash, null);
         setContentView(view);
 
-        //首次打开，才出现启动页
-        if(MvpDemoApp.isFirstRun){
-            MvpDemoApp.isFirstRun = false;
-            mPresenter.startAnimation(view);
-        }else{
-            jumpToMain();
-            return;
-        }
+        mPresenter.start(view);
     }
 
     @Override
-    public void jumpToMain() {
+    public void toMain() {
         MainActivity.toActivity(this);
         finish();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

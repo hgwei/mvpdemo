@@ -1,9 +1,9 @@
-package com.hgw.mvpdemo.presenter;
+package com.hgw.mvpdemo.ui.main.presenter;
 
 import android.os.Handler;
 
 import com.hgw.mvpdemo.base.mvp.BasePresenter;
-import com.hgw.mvpdemo.contract.MainContract;
+import com.hgw.mvpdemo.ui.main.contract.MainContract;
 
 
 /**
