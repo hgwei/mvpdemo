@@ -1,4 +1,4 @@
-package com.hgw.mvpdemo.base;
+package com.hgw.mvpdemo.base.ui;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
+
+import com.hgw.mvpdemo.base.mvp.AbstractPresenter;
+import com.hgw.mvpdemo.base.mvp.BaseView;
 
 /**
  * 描述：MVP模式的Base Fragment
@@ -54,16 +57,6 @@ public abstract class BaseFragment<T extends AbstractPresenter> extends Fragment
     public void hideProgressDialog() {
         if(mProgressDialog!=null && mProgressDialog.isShowing())
             mProgressDialog.dismiss();
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
     /**Presenter初始化的抽象接口*/

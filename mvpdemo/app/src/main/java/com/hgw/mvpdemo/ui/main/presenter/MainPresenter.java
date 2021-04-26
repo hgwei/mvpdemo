@@ -1,9 +1,9 @@
-package com.hgw.mvpdemo.presenter;
+package com.hgw.mvpdemo.ui.main.presenter;
 
 import android.os.Handler;
 
-import com.hgw.mvpdemo.base.BasePresenter;
-import com.hgw.mvpdemo.contract.MainContract;
+import com.hgw.mvpdemo.base.mvp.BasePresenter;
+import com.hgw.mvpdemo.ui.main.contract.MainContract;
 
 
 /**
@@ -29,6 +29,6 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                 mView.showLoginData("用户："+account+"登录成功");
             }
         }, 2000);
-
     }
+
 }

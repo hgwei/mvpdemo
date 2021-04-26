@@ -1,4 +1,4 @@
-package com.hgw.mvpdemo.ui;
+package com.hgw.mvpdemo.ui.main.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.hgw.mvpdemo.R;
-import com.hgw.mvpdemo.base.BaseActivity;
-import com.hgw.mvpdemo.contract.MainContract;
-import com.hgw.mvpdemo.presenter.MainPresenter;
+import com.hgw.mvpdemo.base.ui.BaseActivity;
+import com.hgw.mvpdemo.ui.main.contract.MainContract;
+import com.hgw.mvpdemo.ui.main.presenter.MainPresenter;
 
 /**
  * 描述：首页
